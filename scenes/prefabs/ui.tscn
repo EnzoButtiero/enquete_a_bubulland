@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://k3cfh7cxkdx2"]
+[gd_scene load_steps=3 format=3 uid="uid://k3cfh7cxkdx2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_71w1u"]
+[ext_resource type="Texture2D" uid="uid://b6oce3cchrdoh" path="res://icon.svg" id="2_8d3g7"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_71w1u")
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,6 +52,7 @@ Theme : Bulle
 "
 
 [node name="OptionsMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,6 +83,7 @@ layout_mode = 2
 text = "Back"
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,6 +120,38 @@ text = "Options"
 [node name="Quit" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="TextBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TextBox"]
+position = Vector2(1419, 950)
+texture = ExtResource("2_8d3g7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "sdvxdbdvdvDvdvdvdv
+dvhjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjvvvvvvvvvvvvvvvvvvvvvvvvvvvvvsdgsgv bonjour
+dv
+dv
+dv
+dv
+"
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MainOptions" to="." method="_on_main_options_pressed"]
