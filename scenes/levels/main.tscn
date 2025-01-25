@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5at84c6csaxa"]
+[gd_scene load_steps=3 format=3 uid="uid://b5at84c6csaxa"]
 
 [ext_resource type="PackedScene" uid="uid://k3cfh7cxkdx2" path="res://scenes/prefabs/ui.tscn" id="1_4gtkc"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_jy1k8"]
-[ext_resource type="PackedScene" uid="uid://byrra6om11tv5" path="res://scenes/levels/port.tscn" id="3_piefq"]
 
 [node name="Main" type="Node"]
 
@@ -10,6 +9,3 @@
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("2_jy1k8")
-
-[node name="port" parent="." instance=ExtResource("3_piefq")]
-position = Vector2(21.3518, 130.959)
