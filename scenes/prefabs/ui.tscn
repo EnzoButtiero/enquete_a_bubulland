@@ -1,15 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://k3cfh7cxkdx2"]
+[gd_scene load_steps=10 format=3 uid="uid://k3cfh7cxkdx2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_71w1u"]
+[ext_resource type="Texture2D" uid="uid://ddhyxs7mcw6ny" path="res://assets/textures/materials/prototypes/Red/texture_10.png" id="2_86317"]
+[ext_resource type="Script" path="res://scripts/text_box.gd" id="2_rln7k"]
+[ext_resource type="Texture2D" uid="uid://brpnin4nuod8u" path="res://assets/sprites/player/player_1.png" id="4_3ycaf"]
+[ext_resource type="Texture2D" uid="uid://cxeatkwahf1ex" path="res://assets/sprites/enquete-Récupéré.png" id="4_ees6d"]
+[ext_resource type="PackedScene" uid="uid://bj0lv61bc3mnn" path="res://scenes/levels/boutique.tscn" id="4_iddp6"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y3hcu"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="Animation" id="Animation_fompx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ntlcv"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0, -0.174533, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.4985, 3.4965, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wgpc"]
+_data = {
+"RESET": SubResource("Animation_fompx"),
+"idle": SubResource("Animation_ntlcv")
+}
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_71w1u")
 
 [node name="TextBox" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,10 +55,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("2_rln7k")
 
-[node name="Sprite2D" type="Sprite2D" parent="TextBox"]
-position = Vector2(1401, 968)
-texture = SubResource("CompressedTexture2D_y3hcu")
+[node name="Npc" type="Sprite2D" parent="TextBox"]
+position = Vector2(1374.11, 862.163)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_86317")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextBox/Npc"]
+libraries = {
+"": SubResource("AnimationLibrary_0wgpc")
+}
+autoplay = "idle"
+
+[node name="Player" type="Sprite2D" parent="TextBox"]
+position = Vector2(525.111, 860.163)
+scale = Vector2(-0.15, 0.15)
+texture = ExtResource("4_3ycaf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextBox/Player"]
+libraries = {
+"": SubResource("AnimationLibrary_0wgpc")
+}
+autoplay = "idle"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
 layout_mode = 1
@@ -29,10 +86,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -163.0
-offset_right = 250.0
-offset_bottom = -63.0
+offset_left = -276.889
+offset_top = -268.837
+offset_right = 223.111
+offset_bottom = -168.837
 grow_horizontal = 2
 grow_vertical = 0
 text = "sdvxdbdvdvDvdvdvdv
@@ -44,6 +101,7 @@ dv
 "
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,7 +141,13 @@ text = "Global Game Jam 2025
 Theme : Bulle
 "
 
+[node name="Island" type="Sprite2D" parent="MainMenu"]
+position = Vector2(1071, 593)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("4_ees6d")
+
 [node name="OptionsMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,6 +178,7 @@ layout_mode = 2
 text = "Back"
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,6 +215,10 @@ text = "Options"
 [node name="Quit" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Boutique" parent="." node_paths=PackedStringArray("text") instance=ExtResource("4_iddp6")]
+visible = false
+text = NodePath("../TextBox")
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MainOptions" to="." method="_on_main_options_pressed"]

@@ -21,8 +21,7 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 3
 script = ExtResource("1_4v7sl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -82,7 +81,7 @@ position = Vector2(105, 914)
 texture = ExtResource("9_m2na3")
 
 [node name="ActionableFinder" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]

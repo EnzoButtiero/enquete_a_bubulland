@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bj0lv61bc3mnn"]
+[gd_scene load_steps=25 format=3 uid="uid://bj0lv61bc3mnn"]
 
 [ext_resource type="Script" path="res://scripts/boutique.gd" id="1_7asv7"]
 [ext_resource type="Texture2D" uid="uid://b2thg476lgm2" path="res://assets/textures/materials/prototypes/Green/texture_01.png" id="1_fnljl"]
@@ -19,9 +19,131 @@
 [ext_resource type="Texture2D" uid="uid://camdgoghrjnvi" path="res://assets/textures/materials/prototypes/Dark/texture_01.png" id="16_om8h0"]
 [ext_resource type="Texture2D" uid="uid://csr1h616v7dr" path="res://assets/textures/materials/prototypes/Dark/texture_02.png" id="17_6kb3e"]
 [ext_resource type="Texture2D" uid="uid://wedfkmt73ew4" path="res://assets/textures/materials/prototypes/Dark/texture_03.png" id="18_av6gt"]
+[ext_resource type="Texture2D" uid="uid://c6p20b86o25ot" path="res://assets/textures/materials/prototypes/Dark/texture_09.png" id="20_mx7ho"]
+
+[sub_resource type="Animation" id="Animation_so7fd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2281, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(919, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0872665, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_nru06"]
+resource_name = "arrived"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(2281, -0.25, 0, 0.25, 0, 1700, -0.25, 0, 0.25, 0, 1600, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(919, -0.25, 0, 0.25, 0, 919, -0.25, 0, 0.25, 0, 919, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.0872665, -0.25, 0, 0.25, 0, -0.20944, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_2q185"]
+resource_name = "exited"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1600, -0.25, 0, 0.25, 0, 2660, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(919, -0.25, 0, 0.25, 0, 919, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.361283, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnucg"]
+_data = {
+"RESET": SubResource("Animation_so7fd"),
+"arrived": SubResource("Animation_nru06"),
+"exited": SubResource("Animation_2q185")
+}
 
 [node name="Boutique" type="Node2D"]
 script = ExtResource("1_7asv7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
 
 [node name="Cans" type="TextureButton" parent="."]
 offset_left = 107.0
@@ -53,7 +175,7 @@ texture_normal = ExtResource("7_2jf3r")
 texture_pressed = ExtResource("8_s3gey")
 texture_hover = ExtResource("9_wkjyj")
 
-[node name="Satue" type="TextureButton" parent="."]
+[node name="Statue" type="TextureButton" parent="."]
 offset_left = 129.0
 offset_top = 295.0
 offset_right = 1153.0
@@ -82,3 +204,21 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("16_om8h0")
 texture_pressed = ExtResource("17_6kb3e")
 texture_hover = ExtResource("18_av6gt")
+
+[node name="Npc" type="Sprite2D" parent="."]
+position = Vector2(2281, 919)
+rotation = 0.0872665
+scale = Vector2(0.2, 0.66)
+texture = ExtResource("20_mx7ho")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Npc"]
+libraries = {
+"": SubResource("AnimationLibrary_gnucg")
+}
+
+[connection signal="pressed" from="Cans" to="." method="_on_cans_pressed"]
+[connection signal="pressed" from="Seaweed" to="." method="_on_seaweed_pressed"]
+[connection signal="pressed" from="Savon" to="." method="_on_savon_pressed"]
+[connection signal="pressed" from="Statue" to="." method="_on_statue_pressed"]
+[connection signal="pressed" from="Bible" to="." method="_on_bible_pressed"]
+[connection signal="pressed" from="Poppaper" to="." method="_on_poppaper_pressed"]

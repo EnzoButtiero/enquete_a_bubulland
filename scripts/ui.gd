@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+const PLAYER = preload("res://scenes/prefabs/player.tscn")
 @onready var main_menu: Control = $MainMenu
 @onready var options_menu: Control = $OptionsMenu
 @onready var pause_menu: Control = $PauseMenu
@@ -10,7 +10,10 @@ var pause_menu_on : bool
 
 var last_opened : Control
 
+var player
+
 func _ready() -> void:
+	player = PLAYER.instantiate()
 	main_menu_on = true
 	options_menu_on = false
 	pause_menu_on = false
@@ -40,6 +43,7 @@ func _on_pause_options_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	main_menu_on = false
+	self.add_child(player)
 
 func _on_options_back_pressed() -> void:
 	options_menu_on = !options_menu_on

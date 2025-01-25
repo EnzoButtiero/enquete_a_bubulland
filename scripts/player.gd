@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var actionable_finder: Area2D = $ActionableFinder
 
 const SPEED = 200.0
 
