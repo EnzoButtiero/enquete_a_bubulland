@@ -1,0 +1,84 @@
+[gd_scene load_steps=20 format=3 uid="uid://bj0lv61bc3mnn"]
+
+[ext_resource type="Script" path="res://scripts/boutique.gd" id="1_7asv7"]
+[ext_resource type="Texture2D" uid="uid://b2thg476lgm2" path="res://assets/textures/materials/prototypes/Green/texture_01.png" id="1_fnljl"]
+[ext_resource type="Texture2D" uid="uid://dnsnvfxqb5jc1" path="res://assets/textures/materials/prototypes/Green/texture_02.png" id="2_18ggs"]
+[ext_resource type="Texture2D" uid="uid://ded8f30bbhmtc" path="res://assets/textures/materials/prototypes/Green/texture_03.png" id="3_t5rwr"]
+[ext_resource type="Texture2D" uid="uid://b3iyqa6ot7rlm" path="res://assets/textures/materials/prototypes/Orange/texture_01.png" id="4_0gjc0"]
+[ext_resource type="Texture2D" uid="uid://brkofbfw5ga7i" path="res://assets/textures/materials/prototypes/Orange/texture_02.png" id="5_0rpmx"]
+[ext_resource type="Texture2D" uid="uid://dk5ha8amm2jit" path="res://assets/textures/materials/prototypes/Orange/texture_03.png" id="6_41oq1"]
+[ext_resource type="Texture2D" uid="uid://dy5lseaknhbhb" path="res://assets/textures/materials/prototypes/Purple/texture_01.png" id="7_2jf3r"]
+[ext_resource type="Texture2D" uid="uid://d4kmyuj7j5cde" path="res://assets/textures/materials/prototypes/Purple/texture_02.png" id="8_s3gey"]
+[ext_resource type="Texture2D" uid="uid://cxtfggyqlsq24" path="res://assets/textures/materials/prototypes/Purple/texture_03.png" id="9_wkjyj"]
+[ext_resource type="Texture2D" uid="uid://defbsn0mqicpl" path="res://assets/textures/materials/prototypes/Red/texture_01.png" id="10_cjdse"]
+[ext_resource type="Texture2D" uid="uid://bvtpojhyoervc" path="res://assets/textures/materials/prototypes/Red/texture_02.png" id="11_uamp7"]
+[ext_resource type="Texture2D" uid="uid://dmrugpcpprnxu" path="res://assets/textures/materials/prototypes/Red/texture_03.png" id="12_fcy72"]
+[ext_resource type="Texture2D" uid="uid://ca7c8butjkqg5" path="res://assets/textures/materials/prototypes/Light/texture_01.png" id="13_te664"]
+[ext_resource type="Texture2D" uid="uid://kp2aocd5qlxl" path="res://assets/textures/materials/prototypes/Light/texture_02.png" id="14_dio2c"]
+[ext_resource type="Texture2D" uid="uid://bnu02o1fvprv8" path="res://assets/textures/materials/prototypes/Light/texture_03.png" id="15_vxu8g"]
+[ext_resource type="Texture2D" uid="uid://camdgoghrjnvi" path="res://assets/textures/materials/prototypes/Dark/texture_01.png" id="16_om8h0"]
+[ext_resource type="Texture2D" uid="uid://csr1h616v7dr" path="res://assets/textures/materials/prototypes/Dark/texture_02.png" id="17_6kb3e"]
+[ext_resource type="Texture2D" uid="uid://wedfkmt73ew4" path="res://assets/textures/materials/prototypes/Dark/texture_03.png" id="18_av6gt"]
+
+[node name="Boutique" type="Node2D"]
+script = ExtResource("1_7asv7")
+
+[node name="Cans" type="TextureButton" parent="."]
+offset_left = 107.0
+offset_top = 74.0
+offset_right = 1131.0
+offset_bottom = 1098.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_fnljl")
+texture_pressed = ExtResource("2_18ggs")
+texture_hover = ExtResource("3_t5rwr")
+
+[node name="Seaweed" type="TextureButton" parent="."]
+offset_left = 335.0
+offset_top = 76.0
+offset_right = 1359.0
+offset_bottom = 1100.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("4_0gjc0")
+texture_pressed = ExtResource("5_0rpmx")
+texture_hover = ExtResource("6_41oq1")
+
+[node name="Savon" type="TextureButton" parent="."]
+offset_left = 521.0
+offset_top = 83.0
+offset_right = 1545.0
+offset_bottom = 1107.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_2jf3r")
+texture_pressed = ExtResource("8_s3gey")
+texture_hover = ExtResource("9_wkjyj")
+
+[node name="Satue" type="TextureButton" parent="."]
+offset_left = 129.0
+offset_top = 295.0
+offset_right = 1153.0
+offset_bottom = 1319.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("10_cjdse")
+texture_pressed = ExtResource("11_uamp7")
+texture_hover = ExtResource("12_fcy72")
+
+[node name="Bible" type="TextureButton" parent="."]
+offset_left = 331.0
+offset_top = 285.0
+offset_right = 1355.0
+offset_bottom = 1309.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("13_te664")
+texture_pressed = ExtResource("14_dio2c")
+texture_hover = ExtResource("15_vxu8g")
+
+[node name="Poppaper" type="TextureButton" parent="."]
+offset_left = 536.0
+offset_top = 304.0
+offset_right = 1560.0
+offset_bottom = 1328.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("16_om8h0")
+texture_pressed = ExtResource("17_6kb3e")
+texture_hover = ExtResource("18_av6gt")

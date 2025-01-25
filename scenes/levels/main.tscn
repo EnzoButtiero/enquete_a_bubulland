@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5at84c6csaxa"]
+[gd_scene load_steps=6 format=3 uid="uid://b5at84c6csaxa"]
 
 [ext_resource type="PackedScene" uid="uid://k3cfh7cxkdx2" path="res://scenes/prefabs/ui.tscn" id="1_4gtkc"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_jy1k8"]
 [ext_resource type="PackedScene" uid="uid://be1r32joen3qo" path="res://scenes/prefabs/player.tscn" id="2_y0uli"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_ttqrk"]
+[ext_resource type="Texture2D" uid="uid://cxeatkwahf1ex" path="res://assets/sprites/enquete-Récupéré.png" id="5_y2knt"]
 
 [node name="Main" type="Node"]
 
@@ -14,4 +15,10 @@ script = ExtResource("2_jy1k8")
 
 [node name="Player" parent="." instance=ExtResource("2_y0uli")]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("3_ttqrk")
+
+[node name="Island" type="Sprite2D" parent="."]
+position = Vector2(397, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y2knt")

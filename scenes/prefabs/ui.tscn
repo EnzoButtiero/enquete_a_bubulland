@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://k3cfh7cxkdx2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_71w1u"]
-[ext_resource type="Texture2D" uid="uid://b6oce3cchrdoh" path="res://icon.svg" id="2_8d3g7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y3hcu"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_71w1u")
 
 [node name="TextBox" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +20,7 @@ mouse_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="TextBox"]
 position = Vector2(1401, 968)
-texture = ExtResource("2_8d3g7")
+texture = SubResource("CompressedTexture2D_y3hcu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
 layout_mode = 1
