@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	options_menu.visible = options_menu_on
 	pause_menu.visible = pause_menu_on
 	
-	if Input.is_action_just_released("pause") :
+	if Input.is_action_just_released("pause") and !main_menu_on:
 		pause_menu_on = !pause_menu_on
 		last_opened = pause_menu
 

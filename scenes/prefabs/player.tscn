@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://be1r32joen3qo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_quwxw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eejrj"]
+radius = 10.0
+height = 30.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_quwxw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("CapsuleMesh_eejrj")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -36.0
+offset_right = 5.0
+offset_bottom = -13.0
+text = "E"
