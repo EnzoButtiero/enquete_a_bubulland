@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb8wkwqly12v0"
-path="res://.godot/imported/idl_placeholder.png-16125b06804b7a94b92be3400202dd7b.ctex"
+path="res://godot/imported/idl_placeholder.png-16125b06804b7a94b92be3400202dd7b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://bread_game/placeholder/idl_placeholder.png"
-dest_files=["res://.godot/imported/idl_placeholder.png-16125b06804b7a94b92be3400202dd7b.ctex"]
+dest_files=["res://godot/imported/idl_placeholder.png-16125b06804b7a94b92be3400202dd7b.ctex"]
 
 [params]
 

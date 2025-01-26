@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy7htaiioglhj"
-path="res://.godot/imported/texture_08.png-f5086707f96fd73d26f2f930a9f68ccb.ctex"
+path="res://godot/imported/texture_08.png-f5086707f96fd73d26f2f930a9f68ccb.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/materials/prototypes/Orange/texture_08.png"
-dest_files=["res://.godot/imported/texture_08.png-f5086707f96fd73d26f2f930a9f68ccb.ctex"]
+dest_files=["res://godot/imported/texture_08.png-f5086707f96fd73d26f2f930a9f68ccb.ctex"]
 
 [params]
 

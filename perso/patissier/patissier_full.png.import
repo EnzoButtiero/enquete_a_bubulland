@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g3qainw4lyy2"
-path="res://.godot/imported/patissier_full.png-737090cd1163645d87a89c095c60f337.ctex"
+path="res://godot/imported/patissier_full.png-737090cd1163645d87a89c095c60f337.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://perso/patissier/patissier_full.png"
-dest_files=["res://.godot/imported/patissier_full.png-737090cd1163645d87a89c095c60f337.ctex"]
+dest_files=["res://godot/imported/patissier_full.png-737090cd1163645d87a89c095c60f337.ctex"]
 
 [params]
 

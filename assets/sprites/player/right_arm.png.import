@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dffstr6qwmr2f"
-path="res://.godot/imported/right_arm.png-c64e07dfd804d006cd17617caeae5879.ctex"
+path="res://godot/imported/right_arm.png-c64e07dfd804d006cd17617caeae5879.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/player/right_arm.png"
-dest_files=["res://.godot/imported/right_arm.png-c64e07dfd804d006cd17617caeae5879.ctex"]
+dest_files=["res://godot/imported/right_arm.png-c64e07dfd804d006cd17617caeae5879.ctex"]
 
 [params]
 

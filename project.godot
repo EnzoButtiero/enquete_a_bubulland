@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="Game Jam 2025 Bulle"
+config/version="0.0.1"
 run/main_scene="res://scenes/levels/main.tscn"
+config/use_hidden_project_data_directory=false
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.148222, 0.06829, 0.336787, 1)
 config/icon="res://icon.svg"

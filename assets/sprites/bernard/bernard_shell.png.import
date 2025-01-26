@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0s453f6fnwui"
-path="res://.godot/imported/bernard_shell.png-07a6273a581b1f74173fa3b24a405897.ctex"
+path="res://godot/imported/bernard_shell.png-07a6273a581b1f74173fa3b24a405897.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/bernard/bernard_shell.png"
-dest_files=["res://.godot/imported/bernard_shell.png-07a6273a581b1f74173fa3b24a405897.ctex"]
+dest_files=["res://godot/imported/bernard_shell.png-07a6273a581b1f74173fa3b24a405897.ctex"]
 
 [params]
 

@@ -1,0 +1,11 @@
+res://perso/patissier/face_patissier.tscn::7859b2237d75bb87c1fbd826b5f37d78::1737888006::res://godot/exported/133200997/export-b7421e30687306f7d39e29d9ad5d987b-face_patissier.scn
+res://scenes/levels/boutique.tscn::152c8db67801b0338e2c9ffa47bd063a::1737902405::res://godot/exported/133200997/export-25155bedbd21aee09ff8e59b8dd6a214-boutique.scn
+res://scenes/levels/jeu_nettoyage.tscn::ac7c47927531aaea67418a63c3eced83::1737899576::res://godot/exported/133200997/export-a12836771a8002dfff14cd0c9d2f4ba6-jeu_nettoyage.scn
+res://scenes/levels/main.tscn::cb360cfcb4724a3198435d4c5bcc487f::1737902405::res://godot/exported/133200997/export-904ed24a9be97d1c9f0e72e5ccee4d79-main.scn
+res://scenes/levels/start.tscn::cdaa0e8bac4eb1131c7fae47789b3552::1737902405::res://godot/exported/133200997/export-82bf4c4c236acf194932e61a30d079e1-start.scn
+res://scenes/levels/ville.tscn::79ad7a4824c14b761c666c586f0abe25::1737902406::res://godot/exported/133200997/export-0ed8229f2a2fea19148f0bd7338ad738-ville.scn
+res://scenes/prefabs/player_mesh.tscn::8237dfe259c6b984d20d32029d59a72b::1737902406::res://godot/exported/133200997/export-b18e41e69198db3de82a3442a627067a-player_mesh.scn
+res://scenes/prefabs/shell.tscn::1ae6edf58edc5a96b9bbd9096aff22c8::1737902406::res://godot/exported/133200997/export-2f440a774033db0d7159e787531a494f-shell.scn
+res://scenes/prefabs/tache.tscn::c0ffb16ed9d92322ad733c013b1e153e::1737902406::res://godot/exported/133200997/export-0f98251b0c971b39029c2d4ac6660fe8-tache.scn
+res://scenes/prefabs/text_box.tscn::69db05a31e1c56ffe08db0ff4a8a5f76::1737897042::res://godot/exported/133200997/export-e1b11c4f72a01047308315e81ec8f994-text_box.scn
+res://scenes/prefabs/ui.tscn::d3944f66ee3255ffe02f7cb81a29ac24::1737902405::res://godot/exported/133200997/export-98ebf1ea7c437ab147e56c6846709aa3-ui.scn

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bieqovo34vjgf"
-path="res://.godot/imported/bernard.png-5f1520da1ec3cab3b8574a400df5c233.ctex"
+path="res://godot/imported/bernard.png-5f1520da1ec3cab3b8574a400df5c233.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/bernard/bernard.png"
-dest_files=["res://.godot/imported/bernard.png-5f1520da1ec3cab3b8574a400df5c233.ctex"]
+dest_files=["res://godot/imported/bernard.png-5f1520da1ec3cab3b8574a400df5c233.ctex"]
 
 [params]
 

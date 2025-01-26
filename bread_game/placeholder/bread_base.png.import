@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jmpw1vgvxj7o"
-path="res://.godot/imported/bread_base.png-bce5bf3ecd5511c6da609633fce814f4.ctex"
+path="res://godot/imported/bread_base.png-bce5bf3ecd5511c6da609633fce814f4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://bread_game/placeholder/bread_base.png"
-dest_files=["res://.godot/imported/bread_base.png-bce5bf3ecd5511c6da609633fce814f4.ctex"]
+dest_files=["res://godot/imported/bread_base.png-bce5bf3ecd5511c6da609633fce814f4.ctex"]
 
 [params]
 
