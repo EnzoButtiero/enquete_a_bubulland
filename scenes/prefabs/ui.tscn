@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://k3cfh7cxkdx2"]
+[gd_scene load_steps=15 format=3 uid="uid://k3cfh7cxkdx2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_71w1u"]
 [ext_resource type="Script" path="res://scripts/text_box.gd" id="2_rln7k"]
 [ext_resource type="Texture2D" uid="uid://bieqovo34vjgf" path="res://assets/sprites/bernard/bernard.png" id="3_4juwi"]
 [ext_resource type="Texture2D" uid="uid://brpnin4nuod8u" path="res://assets/sprites/player/player_1.png" id="4_3ycaf"]
-[ext_resource type="Texture2D" uid="uid://cxeatkwahf1ex" path="res://assets/sprites/enquete-Récupéré.png" id="4_ees6d"]
-[ext_resource type="PackedScene" uid="uid://bj0lv61bc3mnn" path="res://scenes/levels/boutique.tscn" id="4_iddp6"]
+[ext_resource type="Texture2D" uid="uid://dqwh421vio6in" path="res://assets/sprites/titre copyduck.png" id="5_4x68y"]
+[ext_resource type="Texture2D" uid="uid://ca64udjcc2aw5" path="res://assets/sprites/sardine/sardine_fou.png" id="6_6g55h"]
+[ext_resource type="Texture2D" uid="uid://kvgu21p8oydp" path="res://assets/sprites/raie/raie.png" id="7_6rvby"]
+[ext_resource type="Texture2D" uid="uid://b107rd050xjss" path="res://assets/sprites/poulpe/poulpe.png" id="8_gxcqs"]
+[ext_resource type="Texture2D" uid="uid://icwlyhj5xdh7" path="res://assets/sprites/player/player_2.png" id="9_sow3w"]
+[ext_resource type="Texture2D" uid="uid://oq5dtbjscfs" path="res://assets/sprites/limace/limace.png" id="10_htu0t"]
+[ext_resource type="Texture2D" uid="uid://bquketvdi744a" path="res://assets/sprites/bernard/bernard_peur.png" id="11_55jbe"]
 
 [sub_resource type="Animation" id="Animation_fompx"]
 length = 0.001
@@ -48,6 +53,7 @@ _data = {
 script = ExtResource("1_71w1u")
 
 [node name="TextBox" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +112,6 @@ libraries = {
 autoplay = "idle"
 
 [node name="MainMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,17 +121,17 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -90.5
-offset_right = 174.0
-offset_bottom = 90.5
+offset_left = -89.0
+offset_top = -28.0
+offset_right = 85.0
+offset_bottom = 153.0
+grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Title" type="Label" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
-text = "Enkete"
 
 [node name="Start" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
@@ -144,12 +149,43 @@ text = "Quit"
 layout_mode = 2
 text = "Global Game Jam 2025
 Theme : Bulle
-"
+Enzo BUTTIERO, Manal SAIDI, Bell CHANG, Anwenn VIALADE"
 
-[node name="Island" type="Sprite2D" parent="MainMenu"]
-position = Vector2(1071, 593)
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("4_ees6d")
+[node name="TitreCopyduck" type="Sprite2D" parent="MainMenu"]
+position = Vector2(1057, 555)
+scale = Vector2(0.699333, 0.699333)
+texture = ExtResource("5_4x68y")
+
+[node name="SardineFou" type="Sprite2D" parent="MainMenu"]
+position = Vector2(152, 879)
+scale = Vector2(0.23625, 0.23625)
+texture = ExtResource("6_6g55h")
+
+[node name="Raie" type="Sprite2D" parent="MainMenu"]
+position = Vector2(527, 801)
+scale = Vector2(0.351825, 0.351825)
+texture = ExtResource("7_6rvby")
+
+[node name="Poulpe" type="Sprite2D" parent="MainMenu"]
+position = Vector2(1372.19, 843.085)
+scale = Vector2(0.318368, 0.318368)
+texture = ExtResource("8_gxcqs")
+
+[node name="Player2" type="Sprite2D" parent="MainMenu"]
+position = Vector2(1091, 932)
+scale = Vector2(0.144492, 0.144492)
+texture = ExtResource("9_sow3w")
+
+[node name="Limace" type="Sprite2D" parent="MainMenu"]
+position = Vector2(845, 927)
+rotation = 3.14159
+scale = Vector2(0.166238, -0.166238)
+texture = ExtResource("10_htu0t")
+
+[node name="BernardPeur" type="Sprite2D" parent="MainMenu"]
+position = Vector2(1730, 893)
+scale = Vector2(0.29421, 0.29421)
+texture = ExtResource("11_55jbe")
 
 [node name="OptionsMenu" type="Control" parent="."]
 layout_mode = 3
@@ -223,9 +259,6 @@ text = "Options"
 [node name="Quit" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="Boutique" parent="." instance=ExtResource("4_iddp6")]
-visible = false
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MainOptions" to="." method="_on_main_options_pressed"]

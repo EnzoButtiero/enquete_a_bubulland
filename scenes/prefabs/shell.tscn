@@ -1,7 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bld8tgf0teuur"]
+[gd_scene load_steps=7 format=3 uid="uid://bld8tgf0teuur"]
 
 [ext_resource type="Script" path="res://scripts/shell.gd" id="1_hni7r"]
 [ext_resource type="Texture2D" uid="uid://bu1jc4xj5jnq0" path="res://assets/sprites/bernard/shell.png" id="2_4yfmr"]
+[ext_resource type="Texture2D" uid="uid://ccma7dw5vii3g" path="res://assets/sprites/fleche.png" id="3_0bnlu"]
+
+[sub_resource type="Animation" id="Animation_ccjs4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-840, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-691.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_twpve"]
 resource_name = "shake"
@@ -27,31 +53,6 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(-691.5, -0.25, 0, 0.25, 0, -720, -0.25, 0, 0.25, 0, -691.5, -0.25, 0, 0.25, 0, -670, -0.25, 0, 0.25, 0, -691.5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
-}
-
-[sub_resource type="Animation" id="Animation_ccjs4"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureButton:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-840, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureButton:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-691.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cipsg"]
@@ -84,4 +85,16 @@ libraries = {
 "": SubResource("AnimationLibrary_cipsg")
 }
 
+[node name="next" type="TextureButton" parent="."]
+visible = false
+z_index = 3
+offset_left = -419.0
+offset_top = 560.0
+offset_right = 276.0
+offset_bottom = 923.0
+texture_normal = ExtResource("3_0bnlu")
+texture_pressed = ExtResource("3_0bnlu")
+texture_hover = ExtResource("3_0bnlu")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

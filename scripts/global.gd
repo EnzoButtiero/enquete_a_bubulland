@@ -16,7 +16,6 @@ func _ready() -> void:
 			dialogs = dialogs["convs"]
 		else:
 			print("Erreur lors du parsing JSON ")
-	read_conversation(1)
 
 func write_dialog_line(conv):
 	var index = 2

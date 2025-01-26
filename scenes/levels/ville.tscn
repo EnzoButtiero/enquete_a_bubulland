@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxggsm43ww6b2"]
+
+[ext_resource type="Texture2D" uid="uid://cxeatkwahf1ex" path="res://assets/sprites/enquete-Récupéré.png" id="1_0nguw"]
+[ext_resource type="Texture2D" uid="uid://cbkkqinv1s5qv" path="res://assets/sprites/ville/ville.png" id="1_aqh8n"]
+[ext_resource type="Script" path="res://scripts/ville.gd" id="1_uaqdc"]
+[ext_resource type="PackedScene" uid="uid://5d8w2ojxfp23" path="res://scenes/prefabs/player_mesh.tscn" id="3_fk3ht"]
+[ext_resource type="Texture2D" uid="uid://onlhw1w006dv" path="res://assets/sprites/ville/boutique.png" id="4_fwai7"]
+
+[node name="ville" type="Node2D"]
+script = ExtResource("1_uaqdc")
+
+[node name="Enquete-récupéré" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1533, 2015)
+scale = Vector2(4, 4)
+texture = ExtResource("1_0nguw")
+
+[node name="Ville" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(987, 581)
+scale = Vector2(0.633091, 0.633091)
+texture = ExtResource("1_aqh8n")
+
+[node name="PlayerMesh" parent="." instance=ExtResource("3_fk3ht")]
+position = Vector2(1226, 636)
+scale = Vector2(0.05, 0.05)
+
+[node name="Boutique" type="TextureButton" parent="."]
+offset_left = 427.0
+offset_top = -177.0
+offset_right = 1044.0
+offset_bottom = 450.0
+texture_pressed = ExtResource("4_fwai7")
+texture_hover = ExtResource("4_fwai7")
+
+[connection signal="pressed" from="Boutique" to="." method="_on_boutique_pressed"]

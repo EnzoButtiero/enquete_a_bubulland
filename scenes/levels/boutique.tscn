@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj0lv61bc3mnn"]
+[gd_scene load_steps=19 format=3 uid="uid://bj0lv61bc3mnn"]
 
 [ext_resource type="Script" path="res://scripts/boutique.gd" id="1_7asv7"]
+[ext_resource type="Texture2D" uid="uid://cm078tobotds6" path="res://assets/sprites/background boutique.png" id="2_5bwmu"]
 [ext_resource type="Texture2D" uid="uid://civkpa0gxmkg7" path="res://assets/textures/materials/prototypes/Dark/texture_08.png" id="2_7bkni"]
 [ext_resource type="Texture2D" uid="uid://8072nbx0w13j" path="res://assets/sprites/prop boutique game jam - flacon à bulle 2025.png" id="2_clxnn"]
 [ext_resource type="PackedScene" uid="uid://5d8w2ojxfp23" path="res://scenes/prefabs/player_mesh.tscn" id="2_yvg4p"]
 [ext_resource type="Texture2D" uid="uid://bxb67kmen0f7c" path="res://assets/sprites/prop boutique game jam 2025 - algues.png" id="5_3syaf"]
 [ext_resource type="Texture2D" uid="uid://cl1x5xvemrxup" path="res://assets/sprites/prop boutique game jam 2025 - savons.png" id="8_kand3"]
 [ext_resource type="Texture2D" uid="uid://ddul2pibh5cgu" path="res://assets/sprites/prop boutique game jam 2025 - statuettes.png" id="11_vhqgg"]
+[ext_resource type="Texture2D" uid="uid://doxcfwk6e35ov" path="res://assets/sprites/comptoir boutique.png" id="12_ttmlh"]
 [ext_resource type="Texture2D" uid="uid://bbe4cvufh82uo" path="res://assets/sprites/prop boutique game jam 2025 - bibbeule.png" id="14_jgi5t"]
-[ext_resource type="Texture2D" uid="uid://camdgoghrjnvi" path="res://assets/textures/materials/prototypes/Dark/texture_01.png" id="16_om8h0"]
 [ext_resource type="Texture2D" uid="uid://bw0rx71dpp5yk" path="res://assets/sprites/prop boutique game jam 2025 - vêtements bulle.png" id="17_0sgdk"]
 [ext_resource type="Texture2D" uid="uid://334d3mjojtx4" path="res://assets/sprites/sardine/sardine_1.png" id="20_rtfdh"]
 
@@ -138,6 +139,12 @@ font_size = 64
 [node name="Boutique" type="Node2D"]
 script = ExtResource("1_7asv7")
 
+[node name="BackgroundBoutique" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(1046, 558)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5bwmu")
+
 [node name="etagere3" type="Sprite2D" parent="."]
 position = Vector2(475.233, 541)
 scale = Vector2(0.752409, 0.0322066)
@@ -234,22 +241,17 @@ offset_right = -482.5
 offset_bottom = -977.0
 label_settings = SubResource("LabelSettings_g55pq")
 
-[node name="etagere2" type="Sprite2D" parent="."]
-position = Vector2(691, 1089)
-scale = Vector2(1.23301, 0.472209)
-texture = ExtResource("16_om8h0")
-
-[node name="etagere" type="Sprite2D" parent="."]
-position = Vector2(691, 849)
-scale = Vector2(1.26144, 0.204131)
-texture = ExtResource("2_7bkni")
-
 [node name="Score" type="Label" parent="."]
 offset_left = 1011.0
 offset_top = 220.0
 offset_right = 1051.0
 offset_bottom = 243.0
 label_settings = SubResource("LabelSettings_byhfn")
+
+[node name="ComptoirBoutique" type="Sprite2D" parent="."]
+position = Vector2(975, 568)
+scale = Vector2(0.392733, 0.465667)
+texture = ExtResource("12_ttmlh")
 
 [connection signal="pressed" from="Cans" to="." method="_on_cans_pressed"]
 [connection signal="pressed" from="Seaweed" to="." method="_on_seaweed_pressed"]

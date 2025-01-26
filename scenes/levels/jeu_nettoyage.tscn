@@ -9,36 +9,48 @@ script = ExtResource("1_17xx0")
 
 [node name="tache12" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-177, -85)
+script = null
 
 [node name="tache11" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(108, 174)
+script = null
 
 [node name="tache10" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-459, 100)
+script = null
 
 [node name="tache9" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-159, 177)
+script = null
 
 [node name="tache8" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-424, 18)
+script = null
 
 [node name="tache7" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(390, -11)
+script = null
 
 [node name="tache6" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-517, -124)
+script = null
 
 [node name="tache3" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-141, 2)
+script = null
 
 [node name="tache" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(76, 105)
+script = null
 
 [node name="tache2" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(214, -71)
+script = null
 
 [node name="tache4" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(-282, 185)
+script = null
 
 [node name="tache5" parent="." instance=ExtResource("1_675bd")]
 position = Vector2(18, 262)
+script = null

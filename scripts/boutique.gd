@@ -1,4 +1,5 @@
 extends Node2D
+const VILLE = preload("res://scenes/levels/ville.tscn")
 const SARDINE_1 = preload("res://assets/sprites/sardine/sardine_1.png")
 const SARDINE_2 = preload("res://assets/sprites/sardine/sardine_2.png")
 const SARDINE_3 = preload("res://assets/sprites/sardine/sardine_3.png")
@@ -21,15 +22,21 @@ var statue : bool
 var bible : bool
 var poppaper : bool 
 
+var ville
+
 func _ready() -> void:
+	ville = VILLE.instantiate()
 	timer.start()
 	activate_item()
 
 func _process(delta: float) -> void:
+	print(self.get_parent())
 	score_t.text = str(score)
 	if mistake == 3:
+		self.add_child(VILLE.instantiate())
 		lose()
 	elif timer.time_left == 0:
+		self.add_child(VILLE.instantiate())
 		win()
 
 func activate_item():
@@ -82,11 +89,11 @@ func disable_all():
 
 func win():
 	print(score)
-	self.queue_free()
+	self.visible = false
 
 func lose():
 	print(score)
-	self.queue_free()
+	self.visible = false
 
 func _on_cans_pressed() -> void:
 	if cans:
