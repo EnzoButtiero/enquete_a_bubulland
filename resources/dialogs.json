@@ -1,0 +1,54 @@
+{
+  "convs": [
+	{
+	  "conv_id": 1,
+	  "conv": [
+		{
+		  "nom": "a",
+		  "sentiments": "a",
+		  "texte": "a"
+		},
+		{
+		  "nom": "a",
+		  "sentiments": "a",
+		  "texte": "a"
+		},
+		{
+		  "nom": null,
+		  "sentiments": null,
+		  "texte": null
+		},
+		{
+		  "nom": null,
+		  "sentiments": null,
+		  "texte": null
+		}
+	  ]
+	},
+	{
+	  "conv_id": 2,
+	  "conv": [
+		{
+		  "nom": "b",
+		  "sentiments": "b",
+		  "texte": "b"
+		},
+		{
+		  "nom": "b",
+		  "sentiments": "b",
+		  "texte": "b"
+		},
+		{
+		  "nom": null,
+		  "sentiments": null,
+		  "texte": null
+		},
+		{
+		  "nom": null,
+		  "sentiments": null,
+		  "texte": null
+		}
+	  ]
+	}
+  ]
+}
