@@ -1,16 +1,16 @@
 extends CanvasLayer
-
 @onready var main_menu: Control = $MainMenu
 @onready var options_menu: Control = $OptionsMenu
 @onready var pause_menu: Control = $PauseMenu
+
+const start = preload("res://scenes/levels/start.tscn")
+const boutique = preload("res://scenes/levels/boutique.tscn")
 
 var main_menu_on : bool
 var options_menu_on : bool
 var pause_menu_on : bool
 
 var last_opened : Control
-
-var player
 
 func _ready() -> void:
 	main_menu_on = true
@@ -42,6 +42,8 @@ func _on_pause_options_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	main_menu_on = false
+	self.add_child(start.instantiate())
+	
 
 func _on_options_back_pressed() -> void:
 	options_menu_on = !options_menu_on
@@ -52,3 +54,10 @@ func _on_options_back_pressed() -> void:
 
 func _on_pause_back_pressed() -> void:
 	pause_menu_on = !pause_menu_on
+
+
+func _on_boutique_pressed() -> void:
+	self.add_child(boutique.instantiate())
+	options_menu_on = false
+	
+	

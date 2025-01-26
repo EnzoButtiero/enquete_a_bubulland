@@ -1,11 +1,249 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5at84c6csaxa"]
+[gd_scene load_steps=11 format=3 uid="uid://b5at84c6csaxa"]
 
-[ext_resource type="PackedScene" uid="uid://k3cfh7cxkdx2" path="res://scenes/prefabs/ui.tscn" id="1_4gtkc"]
+[ext_resource type="Script" path="res://scripts/global.gd" id="1_ef8yp"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_jy1k8"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="2_pda7i"]
+[ext_resource type="Script" path="res://scripts/text_box.gd" id="3_rd02x"]
+[ext_resource type="Texture2D" uid="uid://bieqovo34vjgf" path="res://assets/sprites/bernard/bernard.png" id="4_b5yaf"]
+[ext_resource type="Texture2D" uid="uid://brpnin4nuod8u" path="res://assets/sprites/player/player_1.png" id="5_cbh3l"]
+[ext_resource type="Texture2D" uid="uid://cxeatkwahf1ex" path="res://assets/sprites/enquete-Récupéré.png" id="6_o4qx3"]
 
-[node name="Main" type="Node"]
+[sub_resource type="Animation" id="Animation_fompx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[node name="UI" parent="." instance=ExtResource("1_4gtkc")]
+[sub_resource type="Animation" id="Animation_ntlcv"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0, -0.174533, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.4985, 3.4965, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wgpc"]
+_data = {
+"RESET": SubResource("Animation_fompx"),
+"idle": SubResource("Animation_ntlcv")
+}
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("text_box")]
+position = Vector2(960, 540)
+script = ExtResource("1_ef8yp")
+text_box = NodePath("UI/TextBox")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("2_pda7i")
+
+[node name="TextBox" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_rd02x")
+
+[node name="nom" type="Label" parent="UI/TextBox"]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 743.0
+offset_right = 725.0
+offset_bottom = 766.0
+
+[node name="text" type="RichTextLabel" parent="UI/TextBox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.889
+offset_top = -268.837
+offset_right = 223.111
+offset_bottom = -168.837
+grow_horizontal = 2
+grow_vertical = 0
+text = "sdvxdbdvdvDvdvdvdv
+dvhjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjvvvvvvvvvvvvvvvvvvvvvvvvvvvvvsdgsgv bonjour
+dv
+dv
+dv
+dv
+"
+
+[node name="Npc" type="Sprite2D" parent="UI/TextBox"]
+position = Vector2(1401, 844)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_b5yaf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/TextBox/Npc"]
+libraries = {
+"": SubResource("AnimationLibrary_0wgpc")
+}
+autoplay = "idle"
+
+[node name="Player" type="Sprite2D" parent="UI/TextBox"]
+position = Vector2(535, 917)
+scale = Vector2(-0.15, 0.15)
+texture = ExtResource("5_cbh3l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/TextBox/Player"]
+libraries = {
+"": SubResource("AnimationLibrary_0wgpc")
+}
+autoplay = "idle"
+
+[node name="MainMenu" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -90.5
+offset_right = 174.0
+offset_bottom = 90.5
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Enkete"
+
+[node name="Start" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="MainOptions" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Info" type="Label" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Global Game Jam 2025
+Theme : Bulle
+"
+
+[node name="Island" type="Sprite2D" parent="UI/MainMenu"]
+visible = false
+position = Vector2(1071, 593)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("6_o4qx3")
+
+[node name="OptionsMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="OptionsBack" type="Button" parent="UI/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Boutique" type="Button" parent="UI/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Boutique mini jeu"
+
+[node name="PauseMenu" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Pause"
+
+[node name="PauseBack" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="PauseOptions" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("2_jy1k8")
+
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Start" to="UI" method="_on_start_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/MainOptions" to="UI" method="_on_main_options_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Quit" to="UI" method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/OptionsMenu/VBoxContainer/OptionsBack" to="UI" method="_on_options_back_pressed"]
+[connection signal="pressed" from="UI/OptionsMenu/VBoxContainer/Boutique" to="UI" method="_on_boutique_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/PauseBack" to="UI" method="_on_pause_back_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/PauseOptions" to="UI" method="_on_pause_options_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Quit" to="UI" method="_on_quit_pressed"]

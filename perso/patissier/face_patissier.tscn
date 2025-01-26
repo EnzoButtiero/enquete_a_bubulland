@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7ehcmces80om"]
+
+[ext_resource type="Texture2D" uid="uid://cahh16scuhe4e" path="res://perso/patissier/patissier_bidon.png" id="1_6k3rp"]
+[ext_resource type="Texture2D" uid="uid://pdxopnxeglor" path="res://perso/patissier/patissier_base_head.png" id="2_5acs7"]
+[ext_resource type="Texture2D" uid="uid://c0dtfqttut83v" path="res://perso/patissier/patissier_normal.png" id="3_rtgl2"]
+[ext_resource type="Texture2D" uid="uid://bj6qn0m4a25h3" path="res://perso/patissier/patissier_colère.png" id="4_ovtnq"]
+[ext_resource type="Texture2D" uid="uid://ci3hlqkmvio40" path="res://perso/patissier/patissier_surpris.png" id="5_hdf2y"]
+[ext_resource type="Texture2D" uid="uid://qcnbwusagb54" path="res://perso/patissier/patissier_happy.png" id="6_k5fkl"]
+[ext_resource type="Texture2D" uid="uid://bwlqcmb8nxcwk" path="res://perso/patissier/patissier_hat.png" id="7_0aldm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PatissierBidon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(299, 416)
+scale = Vector2(0.371693, 0.337698)
+texture = ExtResource("1_6k3rp")
+
+[node name="PatissierBaseHead" type="Sprite2D" parent="."]
+position = Vector2(186, 288)
+scale = Vector2(0.225515, 0.221536)
+texture = ExtResource("2_5acs7")
+
+[node name="PatissierNormal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(267, 237)
+scale = Vector2(0.290816, 0.302326)
+texture = ExtResource("3_rtgl2")
+
+[node name="PatissierColère" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(269, 223)
+scale = Vector2(0.298593, 0.28699)
+texture = ExtResource("4_ovtnq")
+
+[node name="PatissierSurpris" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(263, 224)
+scale = Vector2(0.269841, 0.267442)
+texture = ExtResource("5_hdf2y")
+
+[node name="PatissierHappy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(275, 222)
+scale = Vector2(0.34375, 0.319178)
+texture = ExtResource("6_k5fkl")
+
+[node name="PatissierHat" type="Sprite2D" parent="."]
+position = Vector2(308, 136)
+scale = Vector2(0.256517, 0.261766)
+texture = ExtResource("7_0aldm")

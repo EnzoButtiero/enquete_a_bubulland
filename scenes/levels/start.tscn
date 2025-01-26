@@ -1,0 +1,168 @@
+[gd_scene load_steps=10 format=3 uid="uid://byrra6om11tv5"]
+
+[ext_resource type="Texture2D" uid="uid://lwm3cjb1dda2" path="res://assets/sprites/startzone/start.png" id="1_cb0gh"]
+[ext_resource type="PackedScene" uid="uid://5d8w2ojxfp23" path="res://scenes/prefabs/player_mesh.tscn" id="1_cbeym"]
+[ext_resource type="Texture2D" uid="uid://dosh5ig0h8ngx" path="res://assets/sprites/startzone/start_1.png" id="2_noaf2"]
+[ext_resource type="Texture2D" uid="uid://ckeo10u07tqy" path="res://assets/sprites/startzone/meduse.png" id="2_xefuv"]
+[ext_resource type="PackedScene" uid="uid://bld8tgf0teuur" path="res://scenes/prefabs/shell.tscn" id="5_mebbw"]
+[ext_resource type="Texture2D" uid="uid://wr4xjqbqstqc" path="res://assets/sprites/startzone/dirt.png" id="6_mudf8"]
+
+[sub_resource type="Animation" id="Animation_xn24n"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-800, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2000, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_wohm2"]
+resource_name = "start"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-800, -0.25, 0, 0.25, 0, 800, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2000, -0.25, 0, 0.25, 0, -2000, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bktw"]
+_data = {
+"RESET": SubResource("Animation_xn24n"),
+"start": SubResource("Animation_wohm2")
+}
+
+[node name="start" type="Node2D"]
+position = Vector2(969, 481)
+scale = Vector2(0.925, 0.925)
+
+[node name="Start" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_cb0gh")
+
+[node name="Meduse" type="Sprite2D" parent="Start"]
+position = Vector2(-800, 2000)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_xefuv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start/Meduse"]
+libraries = {
+"": SubResource("AnimationLibrary_2bktw")
+}
+autoplay = "start"
+
+[node name="Start1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(11, 333)
+texture = ExtResource("2_noaf2")
+
+[node name="PlayerMesh" parent="." instance=ExtResource("1_cbeym")]
+position = Vector2(161, -57)
+rotation = 3.14159
+scale = Vector2(0.1, -0.1)
+
+[node name="shell" parent="." instance=ExtResource("5_mebbw")]
+position = Vector2(690.811, 435.676)
+scale = Vector2(0.3, 0.3)
+
+[node name="Dirt" type="Sprite2D" parent="."]
+position = Vector2(665.946, 642.162)
+texture = ExtResource("6_mudf8")

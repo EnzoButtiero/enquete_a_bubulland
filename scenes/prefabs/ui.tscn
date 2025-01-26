@@ -57,6 +57,32 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("2_rln7k")
 
+[node name="nom" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="text" type="RichTextLabel" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.889
+offset_top = -268.837
+offset_right = 223.111
+offset_bottom = -168.837
+grow_horizontal = 2
+grow_vertical = 0
+text = "sdvxdbdvdvDvdvdvdv
+dvhjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjvvvvvvvvvvvvvvvvvvvvvvvvvvvvvsdgsgv bonjour
+dv
+dv
+dv
+dv
+"
+
 [node name="Npc" type="Sprite2D" parent="TextBox"]
 position = Vector2(1401, 844)
 scale = Vector2(0.25, 0.25)
@@ -78,27 +104,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0wgpc")
 }
 autoplay = "idle"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -276.889
-offset_top = -268.837
-offset_right = 223.111
-offset_bottom = -168.837
-grow_horizontal = 2
-grow_vertical = 0
-text = "sdvxdbdvdvDvdvdvdv
-dvhjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjvvvvvvvvvvvvvvvvvvvvvvvvvvvvvsdgsgv bonjour
-dv
-dv
-dv
-dv
-"
 
 [node name="MainMenu" type="Control" parent="."]
 visible = false
@@ -147,7 +152,6 @@ scale = Vector2(0.33, 0.33)
 texture = ExtResource("4_ees6d")
 
 [node name="OptionsMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -176,6 +180,10 @@ text = "Options"
 [node name="OptionsBack" type="Button" parent="OptionsMenu/VBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[node name="Boutique" type="Button" parent="OptionsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Boutique mini jeu"
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
@@ -216,14 +224,14 @@ text = "Options"
 layout_mode = 2
 text = "Quit"
 
-[node name="Boutique" parent="." node_paths=PackedStringArray("text") instance=ExtResource("4_iddp6")]
+[node name="Boutique" parent="." instance=ExtResource("4_iddp6")]
 visible = false
-text = NodePath("../TextBox")
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MainOptions" to="." method="_on_main_options_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="OptionsMenu/VBoxContainer/OptionsBack" to="." method="_on_options_back_pressed"]
+[connection signal="pressed" from="OptionsMenu/VBoxContainer/Boutique" to="." method="_on_boutique_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/PauseBack" to="." method="_on_pause_back_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/PauseOptions" to="." method="_on_pause_options_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://bld8tgf0teuur"]
+
+[ext_resource type="Script" path="res://scripts/shell.gd" id="1_hni7r"]
+[ext_resource type="Texture2D" uid="uid://bu1jc4xj5jnq0" path="res://assets/sprites/bernard/shell.png" id="2_4yfmr"]
+
+[sub_resource type="Animation" id="Animation_twpve"]
+resource_name = "shake"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-840, -0.25, 0, 0.25, 0, -840, -0.25, 0, 0.25, 0, -840, -0.25, 0, 0.25, 0, -840, -0.25, 0, 0.25, 0, -840, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-691.5, -0.25, 0, 0.25, 0, -720, -0.25, 0, 0.25, 0, -691.5, -0.25, 0, 0.25, 0, -670, -0.25, 0, 0.25, 0, -691.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_ccjs4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-840, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-691.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cipsg"]
+_data = {
+"RESET": SubResource("Animation_ccjs4"),
+"shake": SubResource("Animation_twpve")
+}
+
+[node name="shell" type="Node2D"]
+script = ExtResource("1_hni7r")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -691.5
+offset_top = -840.0
+offset_right = 691.5
+offset_bottom = 840.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_4yfmr")
+texture_pressed = ExtResource("2_4yfmr")
+texture_hover = ExtResource("2_4yfmr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cipsg")
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

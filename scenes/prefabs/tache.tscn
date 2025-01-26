@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcm7ls0pjot1l"]
+
+[ext_resource type="Script" path="res://scripts/nettoyage.gd" id="1_bygc7"]
+[ext_resource type="Texture2D" uid="uid://dnqypqw3le56m" path="res://bread_game/placeholder/bread_cut.png" id="3_8glvo"]
+
+[node name="tache" type="Node2D"]
+script = ExtResource("1_bygc7")
+
+[node name="tache" type="TextureButton" parent="."]
+offset_left = -2.0
+offset_top = 28.0
+offset_right = 494.0
+offset_bottom = 366.0
+texture_normal = ExtResource("3_8glvo")
+
+[connection signal="pressed" from="tache" to="." method="_on_texture_button_pressed"]
